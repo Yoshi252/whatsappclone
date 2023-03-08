@@ -4,9 +4,13 @@ import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import * as SplashScreen from 'expo-splash-screen'
 import { useCallback, useEffect, useState } from 'react';
 import * as Font from 'expo-font'
+import 'react-native-gesture-handler';
 
+import AppNavigator from './navigation/AppNavigator';
 // This prevents the splash screen from going away
 SplashScreen.preventAutoHideAsync();
+
+
 
 export default function App() {
 
@@ -58,12 +62,10 @@ export default function App() {
       style={styles.container}
       onLayout={onLayout}
     >
-      <SafeAreaView>
- 
-        <Text style={styles.label}>Hey Yuri!</Text>
-        
-      </SafeAreaView>
-    </SafeAreaProvider>
+  
+      <AppNavigator />
+     
+    </SafeAreaProvider> 
   );
 }
 
@@ -71,8 +73,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   label: {
     color: 'black',
