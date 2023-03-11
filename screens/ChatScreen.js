@@ -9,7 +9,7 @@ import { KeyboardAvoidingView } from 'react-native';
 const ChatScreen = props => {
 
     const [messageText, setMessageText] = useState("");
-    console.log(messageText);
+    console.log(props);
 
     const sendMessage = useCallback(() => {
         setMessageText("")
